@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Interactiva con JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-images"></i> Galería Interactiva</h1>
+            <p class="subtitle">Agrega, selecciona y elimina imágenes dinámicamente</p>
+        </header>
+
+        <main>
+            <section class="control-panel">
+                <h2><i class="fas fa-sliders-h"></i> Controles</h2>
+                
+                <div class="input-group">
+                    <label for="imageUrl">
+                        <i class="fas fa-link"></i> URL de la imagen:
+                    </label>
+                    <div class="input-wrapper">
+                        <input type="url" id="imageUrl" 
+                               placeholder="https://ejemplo.com/imagen.jpg" 
+                               autocomplete="off">
+                        <button id="addImageBtn" class="btn btn-primary">
+                            <i class="fas fa-plus-circle"></i> Agregar Imagen
+                        </button>
+                    </div>
+                    <small class="input-hint">
+                        Puedes usar URLs de imágenes de internet o 
+                        <button id="addSampleBtn" class="text-btn">agregar imágenes de ejemplo</button>
+                    </small>
+                </div>
+                
+                <div class="actions">
+                    <button id="deleteSelectedBtn" class="btn btn-danger" disabled>
+                        <i class="fas fa-trash"></i> Eliminar Imagen Seleccionada
+                    </button>
+                    <button id="clearAllBtn" class="btn btn-secondary">
+                        <i class="fas fa-broom"></i> Limpiar Galería
+                    </button>
+                </div>
+                
+                <div class="info-panel">
+                    <p><i class="fas fa-info-circle"></i> <strong>Instrucciones:</strong></p>
+                    <ul>
+                        <li>Ingresa una URL de imagen en el campo superior</li>
+                        <li>Haz clic en una imagen para seleccionarla (se resaltará)</li>
+                        <li>Elimina la imagen seleccionada con el botón correspondiente</li>
+                        <li>También puedes usar la tecla <kbd>Delete</kbd> para eliminar imágenes</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="gallery-section">
+                <h2><i class="fas fa-th"></i> Galería de Imágenes</h2>
+                <div class="status-bar">
+                    <span id="imageCount">0 imágenes</span>
+                    <span id="selectedInfo">Ninguna imagen seleccionada</span>
+                </div>
+                
+                <div id="gallery" class="gallery">
+                    <!-- Las imágenes se agregarán dinámicamente aquí -->
+                    <div class="empty-gallery">
+                        <i class="fas fa-image"></i>
+                        <p>La galería está vacía</p>
+                        <p class="empty-hint">Agrega imágenes usando el formulario superior</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Galería Interactiva</p>
+            <p>Desarrollada por: Monica Rogel</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
